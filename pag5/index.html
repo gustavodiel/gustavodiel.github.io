@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Teste de Formulário - Gustavo Diel</title>
+    </head>
+    <body bgcolor="#ccddff">
+        <header>By Gustavo Diel</header>
+        <hr>
+        <center><h1>Primeiro Exercício</h1></center><br>
+        <form method="post" action="coisa.php">
+            <center>
+            <strong>Seu nome: </strong>
+            <input type="text" id="tNome" size="25" name="tNome" placeholder="Digite o seu nome 😍" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <strong>Nome do seu cachorro: </strong>
+            <input type="text" id="tCao" size="25" name="tCao" placeholder="Au au au" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <strong>Universidade favorita: </strong>
+            <input type="text" id="tUdesc" size="25" name="tUdesc" placeholder="Digite UDESC" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <input type="checkbox" name="check" id="check" required onchange="changedCheckBox()"> Maiúsculo?
+        </form>
+
+        <hr>
+        <center><h1>Segundo Exercício</h1></center><br>
+        <form method="post" action="coisa.php">
+            <center>
+            <strong>Seu nome: </strong>
+            <input type="text" id="tNome2" size="25" name="tNome2" placeholder="Digite o seu nome 😍" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <strong>Sua idade: </strong>
+            <input type="text" id="tIdade" size="25" name="tIdade" placeholder="Idade aqui" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <strong>Musica favorita: </strong>
+            <input type="text" id="tSong" size="25" name="tSong" placeholder="Digite Rebolation" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <strong>Celular favorito: </strong>
+            <input type="text" id="tCel" size="25" name="tCel" placeholder="Digite iPhone" maxlength="25" onmouseover="onNomeMouseOver()">
+            <br><br>
+
+            <input type="submit" onclick="return onSecondFormSubmit()" value="Submit">
+        </form>
+
+        <hr>
+        <center><h1>Terceiro Exercício</h1></center><br>
+        <form method="post" action="coisa.php">
+            <center>
+            <input type="button" onclick="onTerceiroExecutar()" value="Executar exercicio 3">
+            <p id="resultado">
+        </form>
+
+        <hr>
+        <center><h1>Quarto Exercício</h1><h3>O exemplo criado é um seletor de background</h3></center><br>
+        <form method="post" action="coisa.php">
+            <center>
+                <img src="https://livewallpaper.info/wp-content/uploads/2017/08/Full-HD-s-1080p-4k-HD-New-wallpaper-wpt100556.jpg?w=460&h=259" width=100 height="100"
+                    onmouseover="changeBackground('https://livewallpaper.info/wp-content/uploads/2017/08/Full-HD-s-1080p-4k-HD-New-wallpaper-wpt100556.jpg?w=460&h=259')">
+    			<img src="https://www.walldevil.com/wallpapers/a44/national-geographic-images-nature-wallpaper-wallpapaer-photos-title-fanpop-wallpapers-spots.jpg" width=100 height="100"
+                    onmouseover="changeBackground('https://www.walldevil.com/wallpapers/a44/national-geographic-images-nature-wallpaper-wallpapaer-photos-title-fanpop-wallpapers-spots.jpg')">
+    			<img src="http://sweetcharmbijoux.com.br/wp-content/uploads/2016/01/vermelho18.jpg" width=100 height="100"
+                    onmouseover="changeBackground('http://sweetcharmbijoux.com.br/wp-content/uploads/2016/01/vermelho18.jpg')">
+        </form>
+    </body>
+    <script>
+        function onNomeMouseOver(){
+            //alert("Pare")
+        }
+        function changedCheckBox(){
+            var d=document.getElementById('check');
+            var nome = document.getElementById('tNome')
+            var cao = document.getElementById('tCao')
+            var udesc = document.getElementById('tUdesc')
+
+            if (d.checked) {
+                nome.value = (nome.value.toUpperCase())
+                cao.value = (cao.value.toUpperCase())
+                udesc.value = (udesc.value.toUpperCase())
+            } else {
+                nome.value = (nome.value.toLowerCase())
+                cao.value = (cao.value.toLowerCase())
+                udesc.value = (udesc.value.toLowerCase())
+            }
+        }
+
+        function onSecondFormSubmit(){
+            var nome = document.getElementById('tNome2')
+            var idade = document.getElementById('tIdade')
+            if (nome.value == ""){
+                alert("Digite seu lindo nome no campo selecionado")
+                nome.focus()
+                nome.select()
+                return false
+            }
+            if (idade.value == ""){
+                alert("Digite quanto tempo voce viveu no campo selecionado")
+                idade.focus()
+                idade.select()
+                return false
+            } else if (isNaN(idade.value)) {
+                alert("A idade precisa ser um número!")
+                idade.focus()
+                idade.select()
+                return false
+            }
+            alert("Sucesso!")
+            return true
+        }
+
+        function getDiaSemana(oi){
+            var dia = new Array(7);
+            dia[0] =  "Domingo";
+            dia[1] = "Segunda-feira";
+            dia[2] = "Terça-feira";
+            dia[3] = "Quarta-feira";
+            dia[4] = "Quinta-feira";
+            dia[5] = "Sexta-feira";
+            dia[6] = "Sábado";
+
+            return dia[oi]
+        }
+
+        function calculaBoa(hora){
+            // Boa Tarde, Maria, hoje é terça-feira, 22/08/2017.
+            if (hora < 13)
+                return "Bom dia"
+            if (hora < 19)
+                return "Boa tarde"
+            return "Boa noite"
+        }
+
+        function getFullData() {
+            var hj = new Date()
+            var dd = hj.getDate();
+            var mm = hj.getMonth()+1;
+            var yyyy = hj.getFullYear();
+            if(dd<10){
+                dd='0'+dd;
+            }
+            if(mm<10){
+                mm='0'+mm;
+            }
+            return dd+'/'+mm+'/'+yyyy;
+        }
+
+        function onTerceiroExecutar(){
+            var nome = prompt("Digite seu nome: ", "nome")
+            var data = new Date()
+            var dia = getDiaSemana(data.getDay());
+            var hora = data.getHours();
+            var ano = data.getFullYear()
+            document.getElementById("resultado").innerHTML = calculaBoa(hora) + " "+ nome + ", hoje é " + dia+ ", " + getFullData() + "."
+        }
+
+        function changeBackground(img){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.background = 'url('+img+')'
+        }
+    </script>
+</html>

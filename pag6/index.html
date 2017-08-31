@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gustavo Diel - Trabalho 6</title>
+    </head>
+    <body>
+        <h1>Trabalho 6 de Gustavo Diel</h1>
+        <hr>
+        <h3>Exercício 1</h3>
+        <i>Pesquise um algoritmo de validação CPF e teste seu uso com Javascript.</i><p>
+        Digite seu CPF: <input type="text" placeholder="Digite seu CPF" height="20" maxlength="11" id="cpfUser"
+            oninput="onUserAddedCPF()"><p id="resCPF">
+        <script>
+            function checkCPF(strCPF) {
+                if (strCPF.length < 11)
+                    return false
+                var soma;
+                var resto;
+                soma = 0;
+            	if (strCPF == "00000000000")
+                    return false;
+
+            	for (i=1; i<=9; i++)
+                    soma = soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+            	resto = (soma * 10) % 11;
+
+                if ((resto == 10) || (resto == 11))
+                    resto = 0;
+
+                if (resto != parseInt(strCPF.substring(9, 10)) )
+                    return false;
+
+            	soma = 0;
+                for (i = 1; i <= 10; i++)
+                    soma = soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+                resto = (soma * 10) % 11;
+
+                if ((resto == 10) || (resto == 11))
+                    resto = 0;
+                if (resto != parseInt(strCPF.substring(10, 11) ) )
+                    return false;
+
+                return true;
+            }
+            function onUserAddedCPF(){
+                var cpfRes = document.getElementById("resCPF")
+                var cpfInput = document.getElementById("cpfUser")
+                var resultado = "<font color='#FF0000'>CPF Inválido</font>"
+                if (checkCPF(cpfInput.value)){
+                    resultado = "<font color='#00FF00'>CPF Válido</font>"
+                }
+
+                cpfRes.innerHTML = resultado
+            }
+        </script>
+
+        <hr>
+        <h3>Exercicio 2</h3>
+        <i>Escreva um script que calcule o quadrado, cubo e fatorial dos números de 0 a 10 e gere a saída em HTML</i><p>
+        <p id="ex2Tabela">
+        <script>
+        var f = [];
+        function factorial (n) {
+            if (n == 0 || n == 1)
+                return 1;
+            if (f[n] > 0)
+                return f[n];
+            f[n] = factorial(n-1) * n
+            return f[n]
+        }
+
+        function tableCreate() {
+            var base = document.getElementById('ex2Tabela');
+            var tbl = document.createElement('table');
+            tbl.style.width = '80%';
+            tbl.setAttribute('border', '1');
+            var tbdy = document.createElement('tbody');
+            var titulos = ["N", "N<sup>2</sup>", "N<sup>3</sup>", "Fatorial"]
+            for (var i = 0; i < 12; i++) {
+                var tr = document.createElement('tr');
+                for (var j = 0; j < 4; j++) {
+                    var td = document.createElement('td');
+                    if (i == 0){
+                        td.innerHTML = "<center><b>" + titulos[j]+ "</b></center>"
+                    } else {
+                        var num = i - 1
+                        switch (j) {
+                            case 0:
+                                td.innerHTML = "<center>" + num + "</center>"
+                                break;
+                            case 1:
+                                td.innerHTML = "<center>" + num * num+ "</center>"
+                                break;
+                            case 2:
+                                td.innerHTML = "<center>" + num * num * num+ "</center>"
+                                break;
+                            case 3:
+                                td.innerHTML = "<center>" + factorial(parseInt(num))+ "</center>"
+                                break;
+
+                        }
+                    }
+                    td.appendChild(document.createTextNode('\u0020'))
+                    tr.appendChild(td)
+                }
+                tbdy.appendChild(tr);
+            }
+            tbl.appendChild(tbdy);
+            base.appendChild(tbl)
+        }
+        tableCreate()
+        </script>
+
+        <hr>
+        <h3>Exercicio 3</h3>
+        <i>Para uma frase qualquer escreva com o tamanho font de 1 a 7 ou (H1 a H6) através de Javascript</i><p>
+        <p id="ex3Texto">
+        <script>
+            function generateFonts() {
+                var base = document.getElementById('ex3Texto');
+                var i;
+                var ele;
+                for (i = 0; i < 6; i++){
+                    ele = document.createElement("p");
+                    ele.innerHTML = "<font size=" + ( i + 1 ) + "><center>Essa é a fonte de tamanho " + ( i + 1 ) + "</center></font>"
+                    base.appendChild(ele)
+                }
+            }
+            generateFonts();
+        </script>
+
+        <hr>
+        <h3>Exercicio 4</h3>
+        <i>Desenhar os triângulos com tamanho definido pelo usuário</i><p>
+        <input type="range"  min="1" max="31" id="ex4Slider" oninput="ex4SliderChange(this.value)" value="1"/>
+        <p id="ex4Result">
+        <script>
+            function ex4SliderChange(value) {
+                var base = document.getElementById('ex4Result');
+                base.innerHTML = "Tamanho: " + (value - 1) + "<br>"
+                var tbl = document.createElement('table');
+                tbl.style.width = '0%';
+                tbl.setAttribute('border', '0');
+                var tbdy = document.createElement('tbody');
+                for (var i = 0; i < 1; i++) {
+                    var tr = document.createElement('tr');
+                    for (var j = 0; j < 4; j++) {
+                        var td = document.createElement('td');
+                        var num = i - 1
+                        switch (j) {
+                            case 0:
+                                for (var lin = 1; lin < value; lin++){
+                                    for (var yo = 0; yo < lin; yo++){
+                                        td.innerHTML += "*"
+                                    }
+                                    td.innerHTML += "<br>"
+                                }
+                                break;
+                            case 1:
+                                for (var lin = 0; lin < value - 1; lin++){
+                                    for (var yo = 0; yo < value - 1 - lin; yo++){
+                                        td.innerHTML += "*"
+                                    }
+                                    td.innerHTML += "<br>"
+                                }
+                                break;
+                            case 2:
+                                td.setAttribute('align', 'right');
+                                for (var lin = 0; lin < value - 1; lin++){
+                                    for (var yo = 0; yo < value - 1 - lin; yo++){
+                                        td.innerHTML += "*"
+                                    }
+                                    td.innerHTML += "</div><br>"
+                                }
+                                break;
+                            case 3:
+                                td.setAttribute('align', 'right');
+                                for (var lin = 1; lin < value; lin++){
+                                    for (var yo = 0; yo < lin; yo++){
+                                        td.innerHTML += "*"
+                                    }
+                                    td.innerHTML += "</div><br>"
+                                }
+                                break;
+
+                        }
+                        td.appendChild(document.createTextNode('\u0020'))
+                        tr.appendChild(td)
+                    }
+                    tbdy.appendChild(tr);
+                }
+                tbl.appendChild(tbdy);
+                base.appendChild(tbl)
+            }
+        </script>
+
+        <hr>
+        <h3>Exercicio 5</h3>
+        <i>Somar 2 números fornecidos pelo usuário</i><p>
+        <input type="text" id="ex5Text">
+        <input type="button"  id="ex5Btn" onclick="ex5Click()" value="Clique aqui para inserir outro valor!"/>
+        <p id="ex5Result">
+        <script>
+            function ex5Click() {
+                var num2 = document.getElementById('ex5Text');
+                if (num2.value == "" || isNaN(num2.value)){
+                    alert("Voce deve digitar um numero no campo!")
+                    num2.select()
+                    return;
+                }
+                var num1 = prompt("Digite um numero :3")
+                var base = document.getElementById('ex5Result');
+
+                if (isNaN(num1)){
+                    alert("Voce deve digitar um numero nessa caixa :-)")
+                    ex5Click()
+                    return
+                }
+                alert("O resultado de " + num1 + " + " + num2.value + " é " + (parseInt(num1) + parseInt(num2.value)))
+            }
+        </script>
+        <p>
+        <p>
+        <footer>
+            <i><p align="right">By Gustavo Diel</p></i>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Teste de Formulário - Gustavo Diel</title>
+    </head>
+    <body bgcolor="#ccddff">
+        <hr>
+        <form method="post" action="coisa.php">
+            <center>
+            <strong>Seu nome: </strong>
+            <input type="text" size="25" name="inTextNome" value="Digite o seu nome 😍" maxlength="25">
+            <br><br>
+
+            <strong>Sua senha: (máx. 12 caracteres)</strong>
+            <input type="password" size="12" name="inPw" value="" maxlength="12">
+            <br><br>
+
+            <strong>Sua crítica: </strong><br>
+            <textarea name="taCritica" rows="6" cols="60">Oie, me critique :3</textarea>
+            <br><br>
+
+            <strong>Selecione sua comida preferida:</strong>
+            <select name="selLugares">
+                <option value="macarrao">Macarrão</option>
+                <option value="pizza">Pizza</option>
+                <option value="banana">🍌</option>
+                <option>milho</option>
+                <option value="bambaga" selected>🍔</option>
+            </select>
+            <br><br>
+
+            <strong>Selecione os esportes que voce pratica: (max. 3)</strong><br>
+            <select name="selLugares" multiple="3" size="6">
+                <option value="futebol">⚽️</option>
+                <option value="basquete">🏀</option>
+                <option value="voley">🏐</option>
+                <option value="sinuca">🎱</option>
+                <option value="tenis" selected>🎾</option>
+
+            </select>
+            <br><br>
+            <hr>
+            Voce leu os termos de usuario final?
+            <input type="checkbox" name="check"> Sim
+            <br><br>
+            Leu mesmo?<br>
+            <input type="radio" name="leu" value="sim"> Sim<br>
+            <input type="radio" name="leu" value="nao"> Não<br>
+            <input type="radio" name="leu" value="other"> Talvez<br>
+            <input type="radio" name="leu" value="other"> Para de me perguntar isso, é óbvio que não<br>
+            <hr>
+            Clique onde a sua resposta for <strong>SIM</strong><br>
+            <button type="reset" value="Reset">Se arrependeu?</button>
+            <button type="submit" value="Submit">Tem certeza?</button>
+            </center>
+            <hr>
+        </form>
+    </body>
+</html>

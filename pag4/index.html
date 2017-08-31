@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Exercício 4 - Gustavo Diel</title>
+    </head>
+    <body>
+        <header>
+            <h1>Insira Título Aqui</h1>
+        </header>
+
+        <hr>
+        <nav>
+            <p align="center">
+                <a href="../pag1/index.html">Trabalho 1</a>
+                <a href="../pag2/index.html">Trabalho 2</a><br>
+                <a href="../pag3/index.html">Trabalho 3</a><br>
+                <a href="http://wikipedia.com">Fonte para TCC</a>
+            </p>
+        </nav>
+        <p align="center">
+            <font size=6>Meu TCC:</font>
+        </p>
+        <article>
+            Lorem ipsum dolor sit amet, <mark>consectetur adipisicing</mark> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </article>
+        <form method="post" action="coisa.php">
+            <center>
+            <label for="inTextNome">Seu nome: </label>
+            <input id="inTextNome" type="text" size="25" name="inTextNome" placeholder="Digite o seu nome 😍" maxlength="25" required title="Seu nome">
+            <br><br>
+
+            <label for="inPw">Sua senha: (máx. 12 caracteres): </label>
+            <input type="password" size="12" name="inPw" value="" maxlength="12" required>
+            <br><br>
+
+            <label for="inTextEmail">Seu email: </label>
+            <input type="email" size="25" name="inTextEmail" placeholder="Digite o seu email" maxlength="25" required title="Seu nome">
+            <br><br>
+
+            <strong>Sua crítica: </strong><br>
+            <textarea name="taCritica" rows="6" cols="60">Oie, me critique :3</textarea>
+            <br><br>
+
+            <br><br>
+            <hr>
+            Voce leu os termos de usuario final?
+            <input type="checkbox" name="check" required> Sim
+            <br><br>
+            Leu mesmo?<br>
+            <input type="radio" name="leu" value="sim" required> Sim<br>
+            <input type="radio" name="leu" value="nao"> Não<br>
+            <input type="radio" name="leu" value="other"> Talvez<br>
+            <input type="radio" name="leu" value="other"> Para de me perguntar isso, é óbvio que não<br>
+            <hr>
+            Clique onde a sua resposta for <strong>SIM</strong><br>
+            <button type="reset" value="Reset">Se arrependeu?</button>
+            <button type="submit" value="Submit">Tem certeza?</button>
+            </center>
+            <hr>
+        </form>
+        <center>
+        <canvas id="testeCanvas" width="800" height="600">
+            <script>
+                var canvas = document.getElementById("testeCanvas")
+                var ctx = canvas.getContext("2d")
+                ctx.font = "200px Arial"
+                ctx.strokeText("TEXTO", 0, 300)
+
+                ctx.font = "60px Arial"
+                ctx.strokeText("em js", 650, 350)
+
+            </script>
+        </canvas>
+    </center>
+
+        <hr>
+        <footer>
+            <div>
+                <font size=0.2>
+                    <p align="right">Copyrighted: Gustavo Diel®</p>
+                </font>
+            </div>
+        </footer>
+
+    </body>
+</html>
