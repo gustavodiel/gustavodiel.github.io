@@ -1,0 +1,118 @@
+/* Botao */
+.meuBotao {
+    display: inline-block;
+    border-radius: 30px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 30%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.meuBotao span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.meuBotao span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.meuBotao:hover span {
+  padding-right: 25px;
+}
+
+.meuBotao:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.meuBotao:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+/* Strong */
+STRONG {
+    font-size: 25pt;
+
+}
+
+/* Listas */
+DD {
+    background-color: #FF00FF;
+    border-style: dashed;
+    width: 10%;
+}
+
+.ddMeu {
+    background-color: #FFFF00;
+    border-style: outset;
+    width: 10%;
+}
+
+DT {
+    font-style:italic;
+}
+
+.dtMeu {
+    font-size: 25px;
+}
+
+HR {
+    border-style: dashed;
+    border-color: #FFFFFF;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.44), 0 4px 10px 0 rgba(0,0,0,0.59);
+}
+
+TABLE {
+    border-style: dashed;
+}
+
+UL {
+    background-color: #FFAAAA;
+}
+
+OL {
+    background-color: #AAAAFF;
+    border-style: outset;
+}
+
+.meuLi{
+    border-style: outset;
+    border-color: #009922;
+    transition: all 0.5s;
+}
+
+.meuLi:hover {
+  border-color: #99BBFF;
+  border-width: 5px;
+}
+
+.meuOL{
+    background-color: #AAFFAA;
+    border-style: groove;
+}
+
+.meuTable{
+    transition: all 0.25s;
+    font-size: 20px;
+    width: 100pt;
+}
+.meuTable:hover {
+    font-size: 40px;
+    font-style: italic;
+    width: 170pt;
+    height: 50pt;
+}

@@ -1,0 +1,5 @@
+gustavo $2y$10$RKflRNVNx5lSbefsZ/NFe.32pQkXtdpZxHzlfpXgqCZ//x/.WH3Fi
+root $2y$10$xCO23tYh.wRorlYAk/L7y.VcK736UHcM0hp9vyBIbE71f07nCSX4G
+123 $2y$10$WrH0xPKI5lPLgGm0uNbutO87JE39ctnMnpO6Kf/FW4mIXe8ECsCAm
+123 $2y$10$hQ3WWBcsb.5nJaLSlrhvh.i/kxo65j0WyHrPmZPZe39LVmxAgdodK
+oi $2y$10$r1T6bKnDbsNQnIV2R5mRE.qeoLK3.9SsuxXZrVEf0veAkwkGggQXq
