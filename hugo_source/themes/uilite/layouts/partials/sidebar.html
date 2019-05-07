@@ -1,19 +1,21 @@
 {{ $sidebar := .Site.Data.sidebar }}
 {{ $social := .Site.Data.social }}
-<section id="sidebar" class="sidebar d-flex align-items-center p-5" style="background: url({{.Site.BaseURL}}/images/{{ $sidebar.background }}); background-size: cover;">
+<section id="sidebar" class="sidebar d-flex align-items-center p-5"
+  style="background: url({{.Site.BaseURL}}/images/{{ $sidebar.background }}); background-size: cover;">
   <div class="main-info">
 
     <img src="{{.Site.BaseURL}}/images/{{ $sidebar.displayPicture }}" class="rounded-circle mb-3" width="160px">
 
-    <h1 class="heading" style="color: #ccaa55">{{ $sidebar.title }} <br> > <span class="highlight" style="background-color: #aaaaaa50">{{ $sidebar.highlightedText }}</span></h1>
+    <h1 class="heading" style="color: #ccaa55">{{ $sidebar.title }} <br> > <span
+        style="background-color: #aaaaaa50">{{ $sidebar.highlightedText }}</span></h1>
     <p class="text-muted" style="color: #fff!important">{{ $sidebar.description }}</p>
 
     <div class="social my-4">
 
       {{ range $key, $value := $social }}
-        <a target="_blank" href="{{ $value }}">
-          <i class="fab fa-{{ $key }}"></i>
-        </a>
+      <a target="_blank" href="{{ $value }}">
+        <i class="fab fa-{{ $key }}"></i>
+      </a>
       {{ end }}
 
     </div>
