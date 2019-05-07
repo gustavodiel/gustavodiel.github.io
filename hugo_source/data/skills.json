@@ -1,0 +1,13 @@
+{
+	"title" : "Skills",
+	"skills" : {
+		"C/C++" : "80",
+		"Swift" : "90",
+		"Java" : "50",
+		"Ruby" : "65",
+		"LUA" : "80",
+		"Photoshop" : "70",
+		"After Effects" : "80",
+		"Steam" : "100"
+	}
+}

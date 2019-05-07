@@ -1,0 +1,25 @@
+{
+	"title" : "Experience",
+	"experience" : [
+		{
+			"timeperiod" : "May 2014 - Present",
+			"company" : "UDESC",
+			"description" : "I started my Computer Science bachelor at UDESC university"
+		},
+		{
+			"timeperiod" : "Apr 2016",
+			"company" : "ERAD",
+			"description" : "My first ever paper defence was at ERAD (Escola Regional de Alto Desempenho), where I could share my experiences with lots of other tech enthusiasts and watch really amazing presentations from NVIDIA and other researchers"
+		},
+		{
+			"timeperiod" : "Jul 2018 - Fev 2019",
+			"company" : "Magrathea Labs",
+			"description" : "I started a internship program at Magrathea Labs, where I worked as a Ruby Developer"
+		},
+		{
+			"timeperiod" : "Fev 2019 - Present",
+			"company" : "Magrathea Labs",
+			"description" : "And so, my journey as a Full Stack developer has begun"
+		}
+	]
+}

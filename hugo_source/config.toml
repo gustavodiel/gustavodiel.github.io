@@ -1,0 +1,4 @@
+baseURL = "https://diel.dev/"
+languageCode = "en-us"
+title = "Gustavo Diel"
+theme = "uilite"
